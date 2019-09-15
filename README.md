@@ -1,2 +1,2 @@
-# codewars
-codewars
+# algorithm-tasks
+algorithm-tasks
