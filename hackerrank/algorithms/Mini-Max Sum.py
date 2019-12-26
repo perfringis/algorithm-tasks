@@ -6,49 +6,41 @@ import random
 import re
 import sys
 
-
 def miniMaxSum(arr):
-    return '{0} {1}'.format(sum(nMinElements(arr, 4)), sum(nMaxElements(arr, 4)))
+    min_arr = arr[:]
+    max_arr = arr[:]
 
+    sum_min = 0
+    sum_max = 0
 
-def nMinElements(arr, n):
-    temp_arr = arr[:]
-    final_arr = []
+    for i in range(4):
 
-    for i in range(0, n):
-        minimum = 999999
+        min_id = 0
+        max_id = 0
 
-        for j in range(len(temp_arr)):
-            if temp_arr[j] < minimum:
-                minimum = temp_arr[j]
+        min_val = sys.maxsize
+        max_val = -sys.maxsize - 1
 
-        final_arr.append(minimum)
-        temp_arr.remove(minimum)
+        for idx, x in enumerate(min_arr):
+            if x < min_val:
+                min_val = x
+                min_id = idx
 
-    return final_arr
+        sum_min += min_arr[min_id]
+        del min_arr[min_id]
 
+        for idy, y in enumerate(max_arr):
+            if y > max_val:
+                max_val = y
+                max_id = idy
 
-def nMaxElements(arr, n):
-    temp_arr = arr[:]
-    final_arr = []
+        sum_max += max_arr[max_id]
+        del max_arr[max_id]
 
-    for i in range(0, n):
-
-        minimum = 
-
-        final_arr.append(maximum)
-        temp_arr.remove(maximum)
-
-    return final_arr
-
-
-def nElem(arr, n):
-    if n == 1:
-        return arr[0]
-    return min(arr[n-1], nElem(arr, n-1))
-
+    return [sum_min, sum_max]
 
 if __name__ == '__main__':
-    arr = list(map(int, input().rstrip().split()))
+    # arr = list(map(int, input().rstrip().split()))
 
-    print(miniMaxSum(arr), end='')
+    arr = [1,2,3,4,5]
+    print(*miniMaxSum(arr), sep=' ')
