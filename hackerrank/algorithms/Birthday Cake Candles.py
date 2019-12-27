@@ -6,16 +6,19 @@ import random
 import re
 import sys
 
+
 # Complete the birthdayCakeCandles function below.
 def birthdayCakeCandles(ar):
+    temp_ar = ar[:]
     counter = 0
 
-    prev = -1
-    i = 0
-    while i < len(ar):
-        n = max(ar)
-        if n == prev:
-            
+    max_val = max(temp_ar)
+
+    for x in temp_ar:
+        if x == max_val:
+            counter += 1
+
+    return counter
 
 if __name__ == '__main__':
     # fptr = open(os.environ['OUTPUT_PATH'], 'w')
@@ -26,7 +29,7 @@ if __name__ == '__main__':
     # ar = list(map(int, input().rstrip().split()))
     ar = [3,1,2,3]
 
-    result = birthdayCakeCandles(ar)
+    print(birthdayCakeCandles(ar))
 
     # fptr.write(str(result) + '\n')
     # fptr.close()
