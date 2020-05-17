@@ -1,16 +1,24 @@
 const PizzaBuilder = require("./PizzaBuilder");
 
 class SpicyPizzaBuilder extends PizzaBuilder {
-  buildDough() {
-    pizza.setDough("pan baked");
+
+  dough = "";
+  sauce = "";
+  topping = "";
+
+  setDough(dough) {
+    this.dough = dough;
+    return this;
   }
 
-  buildSauce() {
-    pizza.setSauce("hot");
+  setSauce(sauce) {
+    this.sauce = sauce;
+    return this;
   }
 
-  buildTopping() {
-    pizza.setTopping("pepperoni+salami");
+  setTopping(topping) {
+    this.topping = topping;
+    return this;
   }
 }
 

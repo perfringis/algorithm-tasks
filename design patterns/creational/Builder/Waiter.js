@@ -1,20 +1,22 @@
+const HawaiianPizzaBuilder = require("../Builder/builders/HawaiianPizzaBuilder");
+const SpicyPizzaBuilder = require("../Builder/builders/SpicyPizzaBuilder");
+
 class Waiter {
-    pizzaBuilder;
+  createHawaiianPizza(hawaiianPizzaBuilder) {
+    return hawaiianPizzaBuilder
+      .setDough("cross")
+      .setSauce("mild")
+      .setTopping("ham+pineapple")
+      .createPizza();
+  }
 
-     setPizzaBuilder(pizzaBuilder) {
-        this.pizzaBuilder = pizzaBuilder;
-    }
-
-     getPizza() {
-        return this.pizzaBuilder.getPizza();
-    }
-
-     constructPizza() {
-        this.pizzaBuilder.createPizza();
-        this.pizzaBuilder.buildDough();
-        this.pizzaBuilder.buildSauce();
-        this.pizzaBuilder.buildTopping();
-    }
+  createSpicyPizzaBuilder(spicyPizzaBuilder) {
+    return spicyPizzaBuilder
+      .setDough("pan baked")
+      .setSauce("hot")
+      .setTopping("pepperoni+salami")
+      .createPizza();
+  }
 }
 
 module.exports = Waiter;

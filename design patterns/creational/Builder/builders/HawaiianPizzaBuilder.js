@@ -1,20 +1,24 @@
 const PizzaBuilder = require("./PizzaBuilder");
 
 class HawaiianPizzaBuilder extends PizzaBuilder {
-  constructor() {
-    super();
+
+  dough = "";
+  sauce = "";
+  topping = "";
+
+  setDough(dough) {
+    this.dough = dough;
+    return this;
   }
 
-  buildDough() {
-    this.pizza.setDough("pan baked");
+  setSauce(sauce) {
+    this.sauce = sauce;
+    return this;
   }
 
-  buildSauce() {
-    this.pizza.setSauce("hot");
-  }
-
-  buildTopping() {
-    this.pizza.setTopping("pepperoni+salami");
+  setTopping(topping) {
+    this.topping = topping;
+    return this;
   }
 }
 

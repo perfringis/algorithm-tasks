@@ -1,15 +1,14 @@
-let Waiter = require("./Waiter");
-let HawaiianPizzaBuilder = require("./builders/HawaiianPizzaBuilder");
-let SpicyPizzaBuilder = require("./builders/SpicyPizzaBuilder");
+const Waiter = require("./Waiter");
+const HawaiianPizzaBuilder = require("./builders/HawaiianPizzaBuilder");
+const SpicyPizzaBuilder = require("./builders/SpicyPizzaBuilder");
 
+const waiter = new Waiter();
 
-let waiter = new Waiter();
+const hawaiianPizzaBuilder = new HawaiianPizzaBuilder();
+const spicyPizzaBuilder = new SpicyPizzaBuilder();
 
-let hawaiianPizzaBuilder = new HawaiianPizzaBuilder();
-// let spicyPizzaBuilder = new SpicyPizzaBuilder();
+const hawaiianPizza = waiter.createHawaiianPizza(hawaiianPizzaBuilder);
+const spicyPizza = waiter.createSpicyPizzaBuilder(spicyPizzaBuilder);
 
-waiter.setPizzaBuilder(hawaiianPizzaBuilder);
-waiter.constructPizza();
-
-let pizza = waiter.getPizza();
-console.log(pizza)
+console.log(hawaiianPizza);
+console.log(spicyPizza);

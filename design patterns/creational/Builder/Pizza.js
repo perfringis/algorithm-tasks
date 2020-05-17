@@ -3,16 +3,22 @@ class Pizza {
   sauce = "";
   topping = "";
 
-  setDough(dough) {
-    this.dough = dough;
+  constructor(pizzBuilder) {
+    this.dough = pizzBuilder.dough;
+    this.sauce = pizzBuilder.sauce;
+    this.topping = pizzBuilder.topping;
   }
 
-  setSauce(sauce) {
-    this.sauce = sauce;
+  getDough() {
+    return this.dough;
   }
 
-  setTopping(topping) {
-    this.topping = topping;
+  getSauce() {
+    return this.sauce;
+  }
+
+  getTopping() {
+    return this.topping;
   }
 }
 

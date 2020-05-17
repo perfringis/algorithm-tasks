@@ -1,14 +1,14 @@
 const Pizza = require("../Pizza");
 
 class PizzBuilder {
-  pizza;
+  setDough(dough) {}
 
-  getPizza() {
-    return this.pizza;
-  }
+  setSauce(sauce) {}
+
+  setTopping(topping) {}
 
   createPizza() {
-    this.pizza = new Pizza();
+    return new Pizza(this);
   }
 }
 
