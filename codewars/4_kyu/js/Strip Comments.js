@@ -1,19 +1,10 @@
 const solution = (input, markers) => {
-    let i = 0;
-    while(i < input.length) {
+  markers = markers.join("");
+  const rex = new RegExp(`[\\s]+[${markers}]+.*$`, 'gmi');
 
-        input[i].replace(input[i], '');
-
-        i++;
-    }
-    console.log(input)
+  return input.replace(rex, "");
 };
 
 console.log(
-  solution("apples, plums % and bananas\npears\noranges !applesauce", [
-    "%",
-    "!",
-  ])
+  solution("apples, pears # and bananas\ngrapes\nbananas !apples", ["#", "!"])
 );
-
-// TODO finish it

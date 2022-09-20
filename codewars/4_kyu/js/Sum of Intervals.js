@@ -1,5 +1,6 @@
 function sumIntervals(xs) {
   let ys = xs.sort(([a, b], [c, d]) => a - c);
+  
   let m = -Number.MAX_VALUE;
   let res = 0;
   for (let [a, b] of ys) {
