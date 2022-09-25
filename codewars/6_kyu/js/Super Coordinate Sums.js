@@ -1,3 +1,3 @@
-const superSum = (D, N) => {};
-
-// TODO
+function superSum(D,N) {
+  
+}

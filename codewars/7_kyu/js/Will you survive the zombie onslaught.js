@@ -13,5 +13,3 @@ const zombie_shootout = (zombies, range, ammo) => {
 console.log(zombie_shootout(3, 10, 10));
 console.log(zombie_shootout(100, 8, 200));
 console.log(zombie_shootout(50, 10, 8));
-
-// TODO
